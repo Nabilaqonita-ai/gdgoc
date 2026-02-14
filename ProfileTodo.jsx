@@ -1,13 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import './assets/css/todolist.css';
 import ProfileCard from './components/ProfileCard';
-import TodoList from './components/TodoList';
+import TodoList from './components/Todolist';
 
 const ProfileTodo = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const inputRef = useRef(null);
 
   useEffect(() => {
-    console.log(isDarkMode);
     if (isDarkMode) {
       document.body.classList.add('dark-mode');
     } else {
@@ -16,10 +16,10 @@ const ProfileTodo = () => {
   }, [isDarkMode]);
 
   return (
-    <section className="app-container">
+    <div className="app-container">
       <ProfileCard setIsDarkMode={setIsDarkMode} />
       <TodoList inputRef={inputRef} />
-    </section>
+    </div>
   );
 };
 

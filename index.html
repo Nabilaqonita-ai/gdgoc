@@ -1,13 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>myapp</title>
-  </head>
-  <body>
+    <style>
+        /* Invert entire UI when .inverted is present on <html> */
+        
+        .inverted {
+            filter: invert(1) hue-rotate(180deg);
+        }
+        /* Cancel inversion for images with .no-invert so avatars keep natural colors */
+        
+        .inverted img.no-invert {
+            filter: invert(1) hue-rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
+
 </html>
